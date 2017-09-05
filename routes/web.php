@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	'uses' => 'IndexController@index',
+	'as' => 'home',
+]);
+
+Route::get('/search', [
+	'uses' => 'IndexController@getSearch',
+	'as' => 'search',
+]);
